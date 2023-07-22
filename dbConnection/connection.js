@@ -1,22 +1,26 @@
 const { MongoClient } = require("mongodb");
 
-const uri = 'mongodb+srv://nicoleloaiza31:Jl742G1vXoaexKsc@cluster0.fd3quse.mongodb.net/?retryWrites=true&w=majority';
+//const uri = 'mongodb+srv://nicoleloaiza31:Jl742G1vXoaexKsc@cluster0.fd3quse.mongodb.net/?retryWrites=true&w=majority';
+const uri = 'mongodb+srv://nicoleloaiza31:9HUFZTPJOXGKwBof@cluster0.er2rlau.mongodb.net/?retryWrites=true&w=majority';
 
-const client = new MongoClient(uri);
+let dbCollection ;
 
-async function run() {
-  try {
-    const database = client.db('yugiohDB');
-    const data = database.collection('yugiohData');
+function connectToDb(){
+  MongoClient.connect(uri)
+  .then((client) => {
+    dbCollection = client.db('sample_mflix');
+  })
+  .catch(error => {
+    console.error(error);
+  })
 
-    //console.log(data);
-    return data
-  } catch (error) {
-    console.error('An error occurred, try later', error);
-  } finally {
-    await client.close();
-  }
 }
 
-module.exports = run;
+function getDB() {
+  return dbCollection
+}
 
+module.exports = {
+  connectToDb,
+  getDB
+}
