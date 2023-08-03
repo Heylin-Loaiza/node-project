@@ -1,0 +1,149 @@
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+/* estilos formulario */
+.cardForm,
+#editForm {
+  width: 35%;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid rgb(96, 9, 9);
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.cardForm div,
+#editForm div {
+  margin-bottom: 20px;
+}
+
+.cardForm label,
+#editForm label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: rgb(96, 9, 9);
+}
+
+.cardForm input[type="text"],
+.cardForm input[type="number"],
+.cardForm select,
+.cardForm textarea,
+#editForm input[type="text"],
+#editForm input[type="number"],
+#editForm select,
+#editForm textarea {
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.cardForm textarea,
+#editForm textarea {
+  height: 150px;
+}
+
+/* Estilos para botones */
+.btn {
+  padding: 10px 20px;
+  background-color: rgb(96, 9, 9);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #660000;
+}
+.btnDiv{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+
+/* Estilos para formulario de búsqueda */
+.searchForm {
+  text-align: center;
+  margin: 20px auto;
+  width: 70%;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.searchForm label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: rgb(96, 9, 9);
+}
+
+.searchForm input[type="search"] {
+  width: 35%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+
+/* Estilos para contenedor de tarjetas */
+ul {
+  list-style: none;
+}
+
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.cardDesign {
+  position: relative; 
+  background-image: url('../img/yugioh-card.png');
+  background-repeat: no-repeat;
+  background-size: cover; 
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 156px;
+  height: 250px;
+}
+
+.cardDesign p {
+  margin: 0;
+}
+
+.title {
+  position: absolute;
+  top: 14px;
+}
+
+.type {
+  position: absolute;
+  bottom: 53px;
+}
+
+.cardDescription {
+  position: absolute;
+  bottom: 29px;
+}
+
+.attack-defense {
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  bottom: 11px;
+  right: 20px;
+}

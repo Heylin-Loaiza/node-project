@@ -1,26 +1,17 @@
-const { MongoClient } = require("mongodb");
+const mongoose = require('mongoose');
+const cardSchema = require('../models/schema');
 
-//const uri = 'mongodb+srv://nicoleloaiza31:Jl742G1vXoaexKsc@cluster0.fd3quse.mongodb.net/?retryWrites=true&w=majority';
-const uri = 'mongodb+srv://nicoleloaiza31:9HUFZTPJOXGKwBof@cluster0.er2rlau.mongodb.net/?retryWrites=true&w=majority';
+const uri = 'mongodb+srv://nicoleloaiza31:Jl742G1vXoaexKsc@cluster0.fd3quse.mongodb.net/?retryWrites=true&w=majority'
 
-let dbCollection ;
-
-function connectToDb(){
-  MongoClient.connect(uri)
-  .then((client) => {
-    dbCollection = client.db('sample_mflix');
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    console.log("Conexión exitosa a MongoDB");
   })
-  .catch(error => {
-    console.error(error);
-  })
+  .catch((err) => {
+    console.error("Error al conectar a MongoDB", err);
+  });
 
-}
+const db = mongoose.connection.useDb('yugiohDB');
+const cardModel = db.model('card', cardSchema, 'yugiohData');
 
-function getDB() {
-  return dbCollection
-}
-
-module.exports = {
-  connectToDb,
-  getDB
-}
+module.exports = cardModel;

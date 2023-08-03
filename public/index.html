@@ -4,26 +4,46 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yu-Gi-Oh</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-  <form>
-    <label for="name">Name</label>
-    <input id="name" type="text" name="name" value="name">
-    <label for="description">Description</label>
-    <input id="description" type="checkbox" name="description" value="description">
-    <label for="type">Type</label>
-    <select name="type" id="type">
-      <option value="monster">Monster</option>
-      <option value="magic">Magic</option>
-      <option value="trap">Trap</option>
-    </select>
-    <label for="attack">Attack points</label>
-    <input type="number" id="attack" name="attack" value="attack">
-    <label for="defense">Defense points</label>
-    <input type="number" name="defense" id="defense" value="defense">
-    <label for="img">Image</label>
-    <input type="image" name="img" id="img" value="image">
-    <button type="submit">Send!</button>
+  <form action="" id="cardForm" class="cardForm">
+    <div>
+      <label for="name">Name</label>
+      <input id="name" type="text" name="name">
+    </div>
+    <div class="description">
+      <label for="description">Description</label>
+      <textarea name="description" id="description" placeholder="Write card description"></textarea>
+    </div>
+    <div>
+      <label for="type">Type</label>
+      <select name="type" id="type">
+        <option value="monster">Monster</option>
+        <option value="magic">Magic</option>
+        <option value="trap">Trap</option>
+      </select>
+    </div>
+    <div>
+      <label for="attack">Attack points</label>
+      <input type="number" id="attack" name="attack_points">
+    </div>
+    <div>
+      <label for="defense">Defense points</label>
+      <input type="number" name="defense_points" id="defense">
+    </div>
+    <button type="submit" class="btn">Send!</button>
   </form>
+
+  <form action="" id="searchForm" class="searchForm">
+    <label for="searchCard">Search a card</label>
+    <input type="search" id="searchCard" placeholder="Search your card">
+    <button type="submit" class="btn">Search</button>
+  </form>
+
+  <ul id="cardContainer" class="cardContainer"></ul>
+  <div id="editContainer" class="editContainer"></div>
 </body>
+<script src="./js/main.js"></script>
 </html>
